@@ -84,7 +84,7 @@ namespace planner_task
             isEdditing = true;
             titleTextBox.Text = todoList.Rows[toDoListView.CurrentCell.RowIndex].ItemArray[1].ToString();
             descriptionTextbox.Text = todoList.Rows[toDoListView.CurrentCell.RowIndex].ItemArray[2].ToString();
-            if (dateTimePickerStart.Value > dateTimePickerEnd.Value)
+            if (Convert.ToDateTime(todoList.Rows[toDoListView.CurrentCell.RowIndex].ItemArray[3]) > Convert.ToDateTime(todoList.Rows[toDoListView.CurrentCell.RowIndex].ItemArray[4]))
             {
                 MessageBox.Show("Даты были перепутаны местами, но мы поправили)");
                 dateTimePickerStart.Value = Convert.ToDateTime(todoList.Rows[toDoListView.CurrentCell.RowIndex].ItemArray[4].ToString());
