@@ -33,7 +33,7 @@ namespace planner_task
             todoList.Columns.Add("Описание");
             todoList.Columns.Add("Начало дедлайна");
             todoList.Columns.Add("Конец дедлайна");
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            //string basePath = AppDomain.CurrentDomain.BaseDirectory;
 
             string F = "data.txt";
             //MessageBox.Show(F);
@@ -95,8 +95,8 @@ namespace planner_task
                 dateTimePickerStart.Value = Convert.ToDateTime(todoList.Rows[toDoListView.CurrentCell.RowIndex].ItemArray[3].ToString());
                 dateTimePickerEnd.Value = Convert.ToDateTime(todoList.Rows[toDoListView.CurrentCell.RowIndex].ItemArray[4].ToString());
             }
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            string file = Path.Combine(basePath, "data.txt");
+            
+            string file = "data.txt";
             using (StreamWriter sw = new StreamWriter(file))
             {
                 foreach (DataRow row in todoList.Rows)
@@ -116,8 +116,8 @@ namespace planner_task
             {
                 Console.WriteLine("Error:" + ex);
             }
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            string file = Path.Combine(basePath, "data.txt");
+            //string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string file = "data.txt";
             using (StreamWriter sw = new StreamWriter(file))
             {
                 foreach (DataRow row in todoList.Rows)
@@ -174,8 +174,8 @@ namespace planner_task
                     else todoList.Rows.Add("☒", titleTextBox.Text, descriptionTextbox.Text, dateTimePickerStart.Text, dateTimePickerEnd.Text);
                 }
             }
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            string file = Path.Combine(basePath, "data.txt");
+            //string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string file =  "data.txt";
             using (StreamWriter sw = new StreamWriter(file))
             {
                 foreach (DataRow row in todoList.Rows)
@@ -197,8 +197,8 @@ namespace planner_task
                 todoList.Rows[toDoListView.CurrentCell.RowIndex]["Статус"] = "Просрочено";
             }
             else todoList.Rows[toDoListView.CurrentCell.RowIndex]["Статус"] = "☑";
-            string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            string file = Path.Combine(basePath, "data.txt");
+            //string basePath = AppDomain.CurrentDomain.BaseDirectory;
+            string file =  "data.txt";
             using (StreamWriter sw = new StreamWriter(file))
             {
                 foreach (DataRow row in todoList.Rows)
