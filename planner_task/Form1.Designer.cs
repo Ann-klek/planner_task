@@ -39,9 +39,9 @@
             this.toDoListView = new System.Windows.Forms.DataGridView();
             this.completeButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.startTextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.endTextBox = new System.Windows.Forms.TextBox();
+            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.toDoListView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -117,13 +117,17 @@
             // 
             // toDoListView
             // 
+            this.toDoListView.AllowUserToResizeColumns = false;
+            this.toDoListView.AllowUserToResizeRows = false;
             this.toDoListView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.toDoListView.BackgroundColor = System.Drawing.Color.Thistle;
             this.toDoListView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.toDoListView.Location = new System.Drawing.Point(12, 212);
             this.toDoListView.Name = "toDoListView";
-            this.toDoListView.RowHeadersWidth = 51;
+            this.toDoListView.ReadOnly = true;
+            this.toDoListView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.toDoListView.RowTemplate.Height = 24;
+            this.toDoListView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.toDoListView.Size = new System.Drawing.Size(778, 226);
             this.toDoListView.TabIndex = 9;
             // 
@@ -145,13 +149,6 @@
             this.label4.TabIndex = 11;
             this.label4.Text = "Начало дедлайна:";
             // 
-            // startTextBox
-            // 
-            this.startTextBox.Location = new System.Drawing.Point(330, 94);
-            this.startTextBox.Name = "startTextBox";
-            this.startTextBox.Size = new System.Drawing.Size(285, 22);
-            this.startTextBox.TabIndex = 12;
-            // 
             // label5
             // 
             this.label5.Location = new System.Drawing.Point(330, 119);
@@ -160,21 +157,28 @@
             this.label5.TabIndex = 13;
             this.label5.Text = "Конец дедлайна:";
             // 
-            // endTextBox
+            // dateTimePickerStart
             // 
-            this.endTextBox.Location = new System.Drawing.Point(333, 147);
-            this.endTextBox.Name = "endTextBox";
-            this.endTextBox.Size = new System.Drawing.Size(285, 22);
-            this.endTextBox.TabIndex = 14;
+            this.dateTimePickerStart.Location = new System.Drawing.Point(333, 94);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerStart.TabIndex = 15;
+            // 
+            // dateTimePickerEnd
+            // 
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(333, 143);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerEnd.TabIndex = 16;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.endTextBox);
+            this.Controls.Add(this.dateTimePickerEnd);
+            this.Controls.Add(this.dateTimePickerStart);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.startTextBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.completeButton);
             this.Controls.Add(this.toDoListView);
@@ -208,9 +212,9 @@
         private System.Windows.Forms.DataGridView toDoListView;
         private System.Windows.Forms.Button completeButton;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox startTextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox endTextBox;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStart;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
     }
 }
 
