@@ -34,7 +34,9 @@ namespace planner_task
             todoList.Columns.Add("Начало дедлайна");
             todoList.Columns.Add("Конец дедлайна");
             string basePath = AppDomain.CurrentDomain.BaseDirectory;
+
             string F = Path.Combine(basePath, "data.txt");
+            MessageBox.Show(F);
             if (File.Exists(F))
             {
                 using (StreamReader sr = new StreamReader(F))
